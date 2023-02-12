@@ -1,99 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>Resume</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <main>
-        <article class="box">
-            <h1>Your Name</h1>
-            <div><a href="mailto:mbohblesspearl@gmail.com">mbohblesspearl@gmail.com</a></div>
-            
-            <section class="box">
-                <h2>
-                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
-                    Social media
-                </h2>
-                <ul>
-                    <li><a href="https://github.com/<handle>">@github_handle</a></li>
-                    <li><a href="https://linkedin.com/in/<handle>">@linkedin_handle</a></li>
-                    <li><a href="https://twitter.com/<handle>">@twitter_handle</a></li>
-                </ul>    
-            </section>
-            
-            <section class="box">
-                <div class="education">
-                    <h2>
-                        <i class="fa fa-certificate" aria-hidden="true"></i>
-                        School name
-                    </h2>
-                    <h3>Major</h3>
-                    <ul>
-                        <li>GPA: 4.0</li>
-                        <li>Years</li>
-                    </ul>
-                </div>
-            </section>
+<body class="bg-[#000a12] text-white">
+    <nav class="px-10 lg:px-20 md:px-30 py-5 shadow md:flex md:items-center md:justify-between  bg-[#001b30]">
+        <div class="flex justify-between items-center">
+            <a class="text-2xl font-[Poppins] hover:cursor-pointer" href="#home">MB.</a>
+            <span class="text-3xl cursor-pointer md:hidden block">
+                <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
+        <ul
+            class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-[#001b30]
+                    w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[400px] transition-all ease-in duration-500">
+            <li class="mx-4 my-6 md:my-0"><a href="#projects" class=" text-xl hover:text-blue-600 duration-500">
+                    PROJECTS </a></li>
+            <li class="mx-4 my-6 md:my-0"><a href="#resume" class=" text-xl hover:text-blue-600 duration-500"> RESUME
+                </a></li>
+            <li class="mx-4 my-6 md:my-0"><a href="#contact" class=" text-xl hover:text-blue-600 duration-500"> CONTACT
+                </a></li>
+            <button class="bg-blue-400 font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-white">
+                Say Hello
+            </button>
+        </ul>
 
-            <section class="box">
-                <h2>
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                    Skills
-                </h2>
-                <ul>
-                    <li>CSS</li>
-                    <li>HTML</li>
-                    <li>JavaScript</li>
-                    <li>Git</li>
-                    <li>Visual Studio Code</li>
-                </ul>
-            </section>
-        </article>
-        <article class="box">
-            <section class="box">
-                <h2>
-                    <i class="fa fa-briefcase" aria-hidden="true"></i>
-                    Experience
-                </h2>
-                <h3>Microsoft Learn Student Ambassador</h3>
-                <ul>
-                    <li>Some skill</li>
-                    <li>Another skill</li>
-                </ul>
-            </section>
-            <section class="box">
-                <h2>
-                    <i class="fa fa-building" aria-hidden="true"></i>
-                    Internships
-                </h2>
 
-                <h3>Company name</h3>
-                <ul>
-                    <li>Accomplishment</li>
-                    <li>Another accomplishment</li>
-                </ul>
-            </section>
-            <section class="box">
-                <h2>
-                    <i class="fa fa-cubes" aria-hidden="true"></i>
-                    Projects
-                </h2>
-                
-                <h3>Great hackathon</h3>
-                <div>This was a great hack!</div>
-                <ul>
-                    <li>Cool technology used</li>
-                    <li>Prize won</li>
-                </ul>
-            </section>
-        </article>
-    
-    </main>
+    </nav>
+    <script>
+        function Menu(e) {
+            let list = document.querySelector('ul');
+            if (list.classList.contains('opacity-0')) {
+                e.name = 'close';
+                list.classList.remove('opacity-0');
+                list.classList.add('opacity-100');
+                list.classList.remove('top-[400px]');
+                list.classList.add('top-20');
+            } else {
+                e.name = 'menu';
+                list.classList.remove('opacity-100');
+                list.classList.add('opacity-0');
+                list.classList.remove('top-20');
+                list.classList.add('top-[400px]');
+            }
+        }
+    </script>
 </body>
+
 </html>
