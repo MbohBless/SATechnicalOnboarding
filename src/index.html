@@ -20,26 +20,30 @@
         <div class="flex justify-between items-center">
             <a class="text-2xl  hover:cursor-pointer" href="#home">MB.</a>
             <span class="text-3xl cursor-pointer md:hidden block">
-                <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+                <ion-icon name="menu-outline" id="icon" onclick="Menu(this)"></ion-icon>
             </span>
         </div>
-        <ul
+        <ul id="head"
             class="md:flex md:items-center  md:z-auto md:static absolute bg-[#002836]
                     w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[400px] transition-all ease-in duration-500">
-            <li class="mx-4 my-6 md:my-0"><a href="#tech" class=" text-xl hover:text-blue-600 duration-500">
+            <li class="mx-4 my-6 md:my-0"><a href="#tech" class=" text-xl hover:text-blue-600 duration-500"
+                    onclick="CloseMenu(this)">
                     TECH </a></li>
-            <li class="mx-4 my-6 md:my-0"><a href="#experiences" class=" text-xl hover:text-blue-600 duration-500">
+            <li class="mx-4 my-6 md:my-0"><a onclick="CloseMenu(this)" href="#experiences"
+                    class=" text-xl hover:text-blue-600 duration-500">
                     EXPERIENCES
                 </a></li>
-            <li class="mx-4 my-6 md:my-0"><a href="#certifications" class=" text-xl hover:text-blue-600 duration-500">
+            <li class="mx-4 my-6 md:my-0"><a onclick="CloseMenu(this)" href="#certifications"
+                    class=" text-xl hover:text-blue-600 duration-500">
                     CERTIFICATIONS
                 </a></li>
-            <li class="mx-4 my-6 md:my-0"><a href="#projects" class=" text-xl hover:text-blue-600 duration-500">
+            <li class="mx-4 my-6 md:my-0"><a onclick="CloseMenu(this)" href="#projects"
+                    class=" text-xl hover:text-blue-600 duration-500">
                     PROJECTS
                 </a></li>
-            <button class="bg-blue-400  duration-500 px-6 py-2 mx-4 hover:bg-white">
+            <a href="#contact" onclick="CloseMenu(this)" class="bg-blue-400  duration-500 px-6 py-2 mx-4 hover:bg-white">
                 Say Hello
-            </button>
+            </a>
         </ul>
     </nav>
     <div class="container mx-auto mt-8 w-full h-full flex flex-col md:flex-row md:mb-5" id="home">
@@ -61,13 +65,16 @@
                 been
                 freelancing for a year now while studying at the university and I've manage to gain a decent amount of
                 experience and valuable knowledge from all different kinds of fields throughout my projects/work.</p>
-            <h4 class="hover:cursor-pointer my-5 justify-items-center items-center font-medium text-lg">Say hi
-                <span><ion-icon name="arrow-forward-outline"></ion-icon></span>
-            </h4>
+            <a href="https://api.whatsapp.com/send?phone=674270063">
+                <h4 class="hover:cursor-pointer my-5 justify-items-center items-center font-medium text-lg">Say hi
+                    <span><ion-icon name="arrow-forward-outline"></ion-icon></span>
+                </h4>
+            </a>
+
         </div>
     </div>
-<section class="container" id="tech">
-    <div class=" py-5  w-full  ">
+    <section class="container" id="tech">
+        <div class=" py-5  w-full  ">
             <h2 class="text-3xl md:text-3xl font-medium ml-4 mb-10">Skills</h2>
             <div
                 class="grid grid-cols-3 sm:grid-cols-4 gap-6 md:grid-cols-6 lg:md:grid-cols-10 align-middle justify-center items-center">
@@ -94,10 +101,10 @@
                 <img src="https://www.pngitem.com/pimgs/m/385-3850359_icon-mongodb-logo-hd-png-download.png"
                     class=" w-24 h-24 md:w-24 md:h-24 rounded-full" alt="">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png"
-                    class=" w-24 h-24 md:w-24 md:h-24 rounded-full" alt="">
+                    class=" w-24 h-24 md:w-30 md:h-30 rounded-full" alt="">
 
-                <img src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png"
-                    class=" w-24 h-24 md:w-24 md:h-24 rounded-full" alt="">
+                <img src="https://seeklogo.com/images/A/appwrite-logo-D33B39992A-seeklogo.com.png" class=" w-24 h-24 md:w-24 md:h-24 "
+                    alt="">
             </div>
         </div>
     </section>
@@ -134,7 +141,7 @@
                         <p class="text-sm">During this time, i did practice working with technoies such as the django
                             framework and integration
                             with a frontend technology such as React js with redux for state management</p>
-                
+
                     </div>
                 </div>
                 <div class="decor right">
@@ -176,7 +183,7 @@
     <div class="container py-5 md:py-10">
         <hr>
     </div>
-    
+
     <div class="container" id="certifications">
         <div class=" py-5  w-full rounded-3xl ">
             <h2 class="text-3xl md:text-3xl font-medium ml-4 mb-10">Certifications</h2>
@@ -227,11 +234,12 @@
 
             <!-- create responsive card without images -->
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-                <div class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
+                <a href="https://github.com/MbohBless/store_backend"
+                    class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
                     <h3 class="text-2xl font-medium">Shop Backend</h3>
-                    <p class="text-sm">Developed a full sever side for a web application using with the opportunities
-                        for
-                        crud, role base access, local authentication and oAuth</p>
+                    <p class="text-sm">Developed a full sever side for a web application using with the possibilities
+                        of
+                        crud, role base auth, local authentication and oAuth, JWT</p>
                     <div class=" pt-4 pb-2">
                         <span
                             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Node
@@ -246,8 +254,9 @@
                         <span
                             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Oauth</span>
                     </div>
-                </div>
-                <div class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
+                </a>
+                <a href="https://github.com/MbohBless/gp3_react"
+                    class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
                     <h3 class="text-2xl font-medium">GPT-3 Clone</h3>
                     <p class="text-sm">Open Ai initial website clone with react and vanilla css</p>
                     <div class=" pt-4 pb-2">
@@ -261,8 +270,9 @@
                             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Html</span>
 
                     </div>
-                </div>
-                <div class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
+                </a>
+                <a href="https://github.com/MbohBless/AI_Exam_code"
+                    class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
                     <h3 class="text-2xl font-medium">Artificial intelligence </h3>
                     <p class="text-sm">This project i did develop a practice project where there was a fake news
                         detector and diabetes
@@ -280,8 +290,9 @@
                             Notebook</span>
 
                     </div>
-                </div>
-                <div class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
+                </a>
+                <a href="https://github.com/MbohBless/dashboard"
+                    class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
                     <h3 class="text-2xl font-medium">Admin Dashboard </h3>
                     <p class="text-sm">This project was built using the react library,tailwind css, syncfusion and the
                         React
@@ -298,8 +309,9 @@
                         </span>
 
                     </div>
-                </div>
-                <div class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
+                </a>
+                <a href="https://github.com/MbohBless/flutter_chat_application"
+                    class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
                     <h3 class="text-2xl font-medium">Flutter Chat application </h3>
                     <p class="text-sm">During this project i made use of the Flutter framework to build a chat
                         application
@@ -319,8 +331,9 @@
                         </span>
 
                     </div>
-                </div>
-                <div class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
+                </a>
+                <a href="https://github.com/MbohBless/Jobz4Me"
+                    class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
                     <h3 class="text-2xl font-medium">Jobz 4 me </h3>
                     <p class="text-sm">This was a project aimed at developing a system where individuals could get
                         information about jobs in their local society and also get information about the companies that
@@ -345,9 +358,10 @@
                         </span>
 
                     </div>
-                </div>
-                <div class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
-                    <h3 class="text-2xl font-medium">Mobile Shopee </h3>
+                </a>
+                <a href="https://github.com/MbohBless/MoneyManager"
+                    class="border border-shade2 hover:bg-shade2 cursor-pointer rounded-3xl p-5">
+                    <h3 class="text-2xl font-medium">Money manager </h3>
                     <p class="text-sm">During this project developed an android mobile application with the use of the
                         android
                         Framework, Google Drive API and the Sqlite database. This is an application which allows users
@@ -371,7 +385,7 @@
                         </span>
 
                     </div>
-                </div>
+                </a>
             </div>
 
         </div>
@@ -379,25 +393,79 @@
     <div class="container py-5 md:py-10">
         <hr>
     </div>
+    <!-- generate a section with all my contact information -->
+    <div class="container" id="contact">
+        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-5"> -->
+        <div class="flex flex-col items-center">
+            <h1 class="text-3xl font-bold">Get in touch</h1>
+            <p class="text-lg">I am always open to discussing new projects, creative ideas or opportunities to be
+                part of your
+                visions.</p>
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-5 p-5 ">
+                <a href="https://github.com/MbohBless">
+                    <div
+                        class="border border-shade3 p-4 rounded-2xl hover:bg-shade2 flex flex-row items-center justify-center gap-2 text-md hover:text-lg">
+                        <ion-icon name="logo-github"></ion-icon>
+                        <p>Github</p>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/mboh-bless-pearl-a2884a16b/">
+                    <div
+                        class="border border-shade3 p-4 rounded-2xl hover:bg-shade2 flex flex-row gap-2 items-center justify-center text-md hover:text-lg">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                        <p>Linkedin</p>
+                    </div>
+                </a>
+                <a href="https://twitter.com/Mboh_Bless">
+                    <div
+                        class="border border-shade3 p-4 rounded-2xl hover:bg-shade2 flex flex-row gap-2 items-center justify-center text-md hover:text-lg">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                        <p>Twitter</p>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/mbohbless/">
+                    <div
+                        class="border border-shade3 p-4 rounded-2xl hover:bg-shade2 flex flex-row gap-2 items-center justify-center text-md hover:text-lg">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a href="mailto:mbohblesspearl@gmail.com">
+                    <div
+                        class="border border-shade3 p-4 rounded-2xl hover:bg-shade2 flex flex-row gap-2 items-center justify-center text-md hover:text-lg">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <p>Email</p>
+                    </div>
+                </a>
+    
+    
+    
+    
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+
     <!-- building sec -->
-    <script>
-        function Menu(e) {
-            let list = document.querySelector('ul');
-            if (list.classList.contains('opacity-0')) {
-                e.name = 'close';
-                list.classList.remove('opacity-0');
-                list.classList.add('opacity-100');
-                list.classList.remove('top-[400px]');
-                list.classList.add('top-20');
-            } else {
-                e.name = 'menu';
-                list.classList.remove('opacity-100');
-                list.classList.add('opacity-0');
-                list.classList.remove('top-20');
-                list.classList.add('top-[400px]');
-            }
-        }
+<script src="index.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("a").on('click', function (event) {
+
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    window.location.has;                     });
+            } 
+        });
+    });
     </script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -432,7 +500,8 @@
         }
     </script>
     <!-- creating a script  that fetched projects from github  -->
-    <script>
+    <!-- just a script that would hep fetch all my public repos -->
+    <!-- <script>
         const projects = document.querySelector('.projects');
         const url = 'https://api.github.com/users/MbohBless/repos';
         fetch(url)
@@ -448,7 +517,7 @@
                                                                                                   `;
                     projects.appendChild(projectDiv);
                 })
-            })</script>
+            })</script> -->
 </body>
 
 </html>
